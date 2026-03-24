@@ -6,7 +6,7 @@ import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Admin from "./pages/Admin";
 import Donate from "./pages/Donate";
-
+import Blog from "./pages/Blogs";
 
 function AppLayout() {
   const location = useLocation();
@@ -14,10 +14,10 @@ function AppLayout() {
 
   return (
     <>
-      {/* {showShell ? <Navbar /> : null} */}
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/blogs" element={<Blog />} />
         <Route path="/about" element={<Navigate to="/#about" replace />} />
         <Route path="/programs" element={<Navigate to="/#programs" replace />} />
         <Route path="/media" element={<Navigate to="/#news" replace />} />
