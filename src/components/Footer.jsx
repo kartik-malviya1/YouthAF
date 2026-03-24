@@ -1,13 +1,11 @@
 import { useEffect } from 'react'
+import useReveal from '../hooks/useReveal'
 
 export default function Footer() {
   useEffect(() => {
-    const items = document.querySelectorAll('.reveal')
-    items.forEach((it) => it.classList.add('visible'))
-    return () => {
-      items.forEach((it) => it.classList.remove('visible'))
-    }
+    // legacy behavior retained in useReveal
   }, [])
+  useReveal()
   return (
     <div className="yaf-page">
     <footer id="contact">

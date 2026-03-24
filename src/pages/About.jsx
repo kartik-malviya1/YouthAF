@@ -5,15 +5,13 @@ import { useEffect } from 'react'
 import './home.css'
 import Navbar from '../components/Navbar/Nav'
 import Footer from '../components/Footer'
+import useReveal from '../hooks/useReveal'
 
 export default function About() {
   useEffect(() => {
-    const items = document.querySelectorAll('.reveal')
-    items.forEach((it) => it.classList.add('visible'))
-    return () => {
-      items.forEach((it) => it.classList.remove('visible'))
-    }
+    // keep for any page-load immediate reveals, but prefer useReveal below
   }, [])
+  useReveal()
   return (
     <div className="yaf-page">
       <Navbar />

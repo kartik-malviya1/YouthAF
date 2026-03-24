@@ -19,7 +19,19 @@ export default function Home() {
   const location = useLocation()
 
   useEffect(() => {
-    const revealItems = document.querySelectorAll('.reveal')
+    const revealItems = Array.from(document.querySelectorAll('.reveal'))
+
+    // Make hero-section reveals animate immediately on first load only.
+    const heroItems = revealItems.filter((el) => el.closest('#home'))
+    const timeouts = []
+    heroItems.forEach((el, idx) => {
+      // small stagger so animations are noticeable
+      const t = window.setTimeout(() => el.classList.add('visible'), 20 * idx)
+      timeouts.push(t)
+    })
+
+    // Observe all other reveals for scroll-based animation
+    const itemsToObserve = revealItems.filter((el) => !el.closest('#home'))
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -33,7 +45,7 @@ export default function Home() {
       { threshold: 0.1 },
     )
 
-    revealItems.forEach((item) => observer.observe(item))
+    itemsToObserve.forEach((item) => observer.observe(item))
 
     const handleScroll = () => {
       const nav = document.querySelector('.yaf-nav')
@@ -47,6 +59,7 @@ export default function Home() {
     return () => {
       observer.disconnect()
       window.removeEventListener('scroll', handleScroll)
+      timeouts.forEach((t) => window.clearTimeout(t))
     }
   }, [])
 
@@ -128,15 +141,15 @@ export default function Home() {
         </div>
         <div className="hero-right">
           <div className="hero-mosaic">
-            <div className="mosaic-img">
+            <div className="mosaic-img reveal">
               <img src={bg3} alt="Woman entrepreneur at work" />
               <div className="mosaic-caption">Prema — Breaking the cycle of Majboori</div>
             </div>
-            <div className="mosaic-img">
+            <div className="mosaic-img reveal reveal-delay-1">
               <img src={bg2} alt="Women in business training" />
               <div className="mosaic-caption">Saksham Training Programme</div>
             </div>
-            <div className="mosaic-img">
+            <div className="mosaic-img reveal reveal-delay-2">
               <img src={bg} alt="YESummit participants" />
               <div className="mosaic-caption">YESummit 2024 — 350 Entrepreneurs</div>
             </div>

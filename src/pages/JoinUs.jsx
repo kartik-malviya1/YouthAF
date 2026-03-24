@@ -3,15 +3,13 @@ import './home.css'
 import Navbar from '../components/Navbar/Nav'
 import { joinCards } from '../constant/constant';
 import Footer from '../components/Footer';
+import useReveal from '../hooks/useReveal'
 
 export default function JoinUs() {
   useEffect(() => {
-    const items = document.querySelectorAll('.reveal')
-    items.forEach((it) => it.classList.add('visible'))
-    return () => {
-      items.forEach((it) => it.classList.remove('visible'))
-    }
+    // replaced by useReveal
   }, [])
+  useReveal()
   return (
     <div className="yaf-page">
       <Navbar />

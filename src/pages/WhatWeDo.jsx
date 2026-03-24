@@ -3,18 +3,17 @@ import bg3 from "../assets/bg/vertical-bg.jpg";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar/Nav";
 import { programs, yesFeatures } from "../constant/constant";
+import useReveal from '../hooks/useReveal'
 
 import yesummitimg from "../assets/progimg/yesummit.png";
 import yessummit1 from "../assets/yessummit.png";
 
 export default function WhatWeDo() {
+  useReveal()
   useEffect(() => {
-    const items = document.querySelectorAll(".reveal");
-    items.forEach((it) => it.classList.add("visible"));
-    return () => {
-      items.forEach((it) => it.classList.remove("visible"));
-    };
-  }, []);
+    // kept for parity with other pages if needed
+    return () => {}
+  }, [])
   return (
     <div className="yaf-page">
       <Navbar />
@@ -75,6 +74,7 @@ export default function WhatWeDo() {
                 <img src={bg3} alt="Networking session" />
               </div>
             </div>
+
             <div className="yes-text reveal reveal-delay-1">
               <span className="section-label">YESummit</span>
               <h2 className="section-title">
@@ -89,6 +89,7 @@ export default function WhatWeDo() {
                 grassroots business owners for learning, visibility, and
                 opportunity.
               </p>
+
               <div className="yes-facts">
                 <div className="yf-item">
                   <div className="n">350+</div>
@@ -103,6 +104,7 @@ export default function WhatWeDo() {
                   <div className="l">Exhibiting entrepreneurs</div>
                 </div>
               </div>
+
               <div className="yes-features">
                 {yesFeatures.map((feature) => (
                   <div key={feature.title} className="yes-feat">
