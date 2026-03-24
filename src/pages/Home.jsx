@@ -90,9 +90,8 @@ export default function Home() {
 
   return (
     <div className="yaf-page">
-      <div>
       <Navbar />
-      </div>
+      
       <section className="hero" id="home">
         <div className="hero-left reveal">
           <div className="hero-badge">Pune, Maharashtra · Est. 2016</div>
@@ -104,7 +103,7 @@ export default function Home() {
             Entrepreneurs
           </h1>
           <p className="hero-sub">
-            Using entrepreneurship to gain financial independence, change patriarchal mindsets, overcome a worker&apos;s mentality, boost self-esteem, and conquer fears. 16,000+ women and counting.
+            Empowering over 16,000 women from marginalized communities to build sustainable businesses, gain financial independence, and transform generational mindsets.
           </p>
           <div className="hero-btns">
             <a href="/donate" className="btn-red" target="_blank" rel="noreferrer">
@@ -161,7 +160,7 @@ export default function Home() {
           <div className="about-inner">
             <div className="about-imgs reveal">
               <div className="about-img-big">
-                <img src= {aboutusimg} alt="Women in a training session" />
+                <img src={aboutusimg} alt="Women in a training session" />
               </div>
               <div className="about-img-stack">
                 <div className="about-img-sm">
@@ -182,24 +181,21 @@ export default function Home() {
               <h2 className="section-title">
                 Breaking barriers,
                 <br />
-                <em>one enterprise</em> at a time
+                <em>one enterprise at a time</em>
               </h2>
               <p>
-                YouthAid Foundation has empowered over 16,000 grassroots women from marginalized communities across urban, rural, and tribal areas to start micro, nano, and small enterprises.
+                YouthAid Foundation empowers grassroots women from marginalized urban, rural, and tribal communities to start their own micro and small enterprises. Through hands-on training and consistent mentorship, our entrepreneurs achieve financial independence while breaking free from exploitative work cycles and rigid social constraints.
               </p>
               <p>
-                Through training, mentorship, and long-term support, entrepreneurs build financial independence and move beyond generations of being treated only as workers.
+                As more women step into business ownership, we witness a powerful shift in patriarchal systems that once confined them to domestic roles. By professionalizing the unorganized sector, YouthAid enables individuals to become confident contributors to their families and the economy.
               </p>
               <div className="about-feature">
-                <div className="af-title">YAF Breaking the Cycle of Majboori</div>
+                <div className="af-title">From Worker to Owner</div>
                 <p>
-                  Prema shared that entrepreneurship helped her move from accepting unjust working conditions to building personal and financial freedom through her business.
+                  Entrepreneur stories like Prema's show how business ownership transforms not just income, but identity, dignity, and freedom.
                 </p>
               </div>
               <div className="btn-row">
-                <a href="https://youthaidfoundation.org/about-yaf/" className="btn-red" target="_blank" rel="noreferrer">
-                  Our Full Story
-                </a>
                 <a href="https://www.youtube.com/watch?v=8G-YoVnxgHU" className="btn-ghost-dark" target="_blank" rel="noreferrer">
                   Watch Video <span className="arr">▶</span>
                 </a>
@@ -215,19 +211,17 @@ export default function Home() {
             <div className="reveal">
               <span className="section-label alt-label">Our Impact</span>
               <h2 className="section-title white">
-                Numbers that
+                By the numbers
                 <br />
-                <em>speak</em> for
-                <br />
-                themselves
+                <em>real change</em>
               </h2>
-              <p>From COVID-impacted widows to artisans dreaming of going global, every number here represents a real story of courage and transformation.</p>
+              <p>Every statistic represents a woman who decided her life wasn't fixed—who chose to build something of her own.</p>
             </div>
             <div className="impact-numbers reveal reveal-delay-1">
               <ImpactCard icon="👩‍💼" num="16,000+" label="Women trained across urban slums, rural, and tribal communities" />
-              <ImpactCard icon="🗺️" num="36" label="Districts of Maharashtra covered during the 40-day Udyamita Yatra" />
-              <ImpactCard icon="💰" num="₹1.1Cr" label="Seed capital disbursed to more than 1,000 grassroots entrepreneurs" />
-              <ImpactCard icon="🏆" num="350+" label="Entrepreneurs participating in YESummit 2024 alone" />
+              <ImpactCard icon="🗺️" num="36" label="Districts reached during the Udyamita Yatra" />
+              <ImpactCard icon="💰" num="₹1.1Cr" label="Seed capital disbursed to over 1,000 entrepreneurs" />
+              <ImpactCard icon="🏆" num="350+" label="Entrepreneurs at YESummit 2024" />
             </div>
           </div>
         </div>
@@ -239,14 +233,12 @@ export default function Home() {
             <div>
               <span className="section-label">What We Do</span>
               <h2 className="section-title">
-                Five pillars of
+                Comprehensive support
                 <br />
-                <em>transformation</em>
+                <em>from idea to scale</em>
               </h2>
+              <p>Our integrated approach covers every stage of entrepreneurial growth—training, capital access, market connections, and ongoing mentorship.</p>
             </div>
-            <a href="https://youthaidfoundation.org/our-programs/" className="btn-ghost-dark" target="_blank" rel="noreferrer">
-              All Programs <span className="arr">→</span>
-            </a>
           </div>
           <div className="programs-grid">
             {programs.map((program) => (
@@ -270,15 +262,15 @@ export default function Home() {
         <div className="container">
           <div className="stories-header reveal">
             <div>
-              <span className="section-label">Blogs</span>
+              <span className="section-label">Stories</span>
               <h2 className="section-title">
-                Read stories of <em>resilience</em>
+                Journeys of <em>courage</em>
                 <br />
-                & transformation
+                and transformation
               </h2>
             </div>
             <a href="/blogs" className="btn-ghost-dark">
-              All Blogs <span className="arr">→</span>
+              All Stories <span className="arr">→</span>
             </a>
           </div>
           <div className="stories-grid">
@@ -295,7 +287,7 @@ export default function Home() {
                 }}
                 role="button"
                 tabIndex={0}
-                aria-label={`Read full blog: ${story.title}`}
+                aria-label={`Read full story: ${story.title}`}
               >
                 <div className={`story-img${story.big ? ' tall' : ' short'}`}>
                   <img src={story.img} alt={story.title} />
@@ -307,7 +299,7 @@ export default function Home() {
                   <div className="story-title">{story.title}</div>
                   <p className="story-excerpt">{story.excerpt}</p>
                   <span className="story-read">
-                    Read Full Blog →
+                    Read Full Story →
                   </span>
                 </div>
               </article>
@@ -329,7 +321,7 @@ export default function Home() {
               type="button"
               className="story-modal-close"
               onClick={() => setSelectedStory(null)}
-              aria-label="Close blog"
+              aria-label="Close story"
             >
               ×
             </button>
@@ -345,9 +337,6 @@ export default function Home() {
                   <p key={paragraph}>{paragraph}</p>
                 ))}
               </div>
-              {/* <a href={selectedStory.href} className="story-modal-link" target="_blank" rel="noreferrer">
-                Visit Original Story →
-              </a> */}
             </div>
           </div>
         </div>
@@ -358,7 +347,7 @@ export default function Home() {
           <div className="quote-inner">
             {quotes.map((quote) => (
               <article key={quote.name} className="qt-card">
-                <span className="qt-mark">“</span>
+                <span className="qt-mark">"</span>
                 <p className="qt-text">{quote.text}</p>
                 <div className="qt-name">{quote.name}</div>
                 <div className="qt-role">{quote.role}</div>
@@ -373,24 +362,24 @@ export default function Home() {
           <div className="yes-inner">
             <div className="yes-imgs reveal">
               <div className="yes-img-main">
-                <img src={yessummit1} />
+                <img src={yessummit1} alt="YESummit stage" />
               </div>
               <div className="yes-img-sm">
-                <img src={yesummitimg} />
+                <img src={yesummitimg} alt="Entrepreneur speaking" />
               </div>
               <div className="yes-img-sm">
-                <img src={bg3} alt="Pitch session" />
+                <img src={bg3} alt="Networking session" />
               </div>
             </div>
             <div className="yes-text reveal reveal-delay-1">
               <span className="section-label">YESummit</span>
               <h2 className="section-title">
-                A stage for
+                A national stage for
                 <br />
                 <em>grassroots ambition</em>
               </h2>
               <p>
-                Since 2016, YESummit has been a flagship platform where entrepreneurs showcase products, present business ideas, and build confidence to grow beyond local markets.
+                YESummit is where entrepreneurs showcase products, pitch business ideas, and build the confidence to scale beyond local markets. Our flagship annual event brings together hundreds of grassroots business owners for learning, visibility, and opportunity.
               </p>
               <div className="yes-facts">
                 <div className="yf-item">
@@ -430,12 +419,12 @@ export default function Home() {
           <div className="yatra-left reveal">
             <span className="section-label alt-label">Udyamita Yatra</span>
             <h2 className="section-title white">
-              Taking entrepreneurship
+              Bringing opportunity
               <br />
-              <em>district by district</em>
+              <em>door to door</em>
             </h2>
             <p>
-              The 40-day Udyamita Yatra carried YouthAid&apos;s mission across Maharashtra, reaching women where they are and opening pathways to enterprise in communities often left out of formal support systems.
+              Our 40-day Udyamita Yatra traveled across Maharashtra, reaching women in their own communities with direct access to training, mentorship, and entrepreneurship pathways—breaking the barrier of geography.
             </p>
             <div className="yatra-nums">
               <div className="yatra-num first">
@@ -448,19 +437,19 @@ export default function Home() {
               </div>
               <div className="yatra-num">
                 <div className="n">16K+</div>
-                <div className="l">Women inspired</div>
+                <div className="l">Women engaged locally</div>
               </div>
             </div>
           </div>
           <div className="yatra-right">
             <div className="yatra-right-img">
-              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80&fit=crop" alt="Women in event" />
+              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80&fit=crop" alt="Community gathering" />
             </div>
             <div className="yatra-right-overlay">
               <ul className="yatra-checklist">
-                <li>Grassroots outreach built around aspiration, ownership, and dignity.</li>
-                <li>Local participation connected to entrepreneurship pathways and training opportunities.</li>
-                <li>Momentum carried forward into programmes like Saksham, Sankalp, and Nidhi.</li>
+                <li>Direct outreach building trust and grassroots momentum.</li>
+                <li>Local connections creating pathways to structured training programs.</li>
+                <li>Sustained follow-up through Saksham, Sankalp, and Nidhi initiatives.</li>
               </ul>
             </div>
           </div>
@@ -480,12 +469,12 @@ export default function Home() {
             <div className="nidhi-right reveal reveal-delay-1">
               <span className="section-label">Nidhi</span>
               <h2 className="section-title">
-                Funding confidence,
+                Capital to move from
                 <br />
-                <em>not just businesses</em>
+                <em>dreams to reality</em>
               </h2>
               <p>
-                For many women, capital is the difference between having an idea and having a livelihood. Nidhi bridges that gap with practical support designed for real grassroots constraints.
+                Access to capital is often the barrier between having a brilliant business idea and actually starting. Nidhi provides flexible funding designed for the realities of grassroots entrepreneurs—small amounts, realistic timelines, and support through growth.
               </p>
               <div className="nidhi-types">
                 {nidhiTypes.map((item) => (
@@ -504,17 +493,17 @@ export default function Home() {
       <section className="testimonials-section">
         <div className="container">
           <div className="testi-header reveal">
-            <span className="section-label">Voices</span>
+            <span className="section-label">Impact Voices</span>
             <h2 className="section-title">
-              What change
+              What real change
               <br />
-              <em>feels like</em>
+              <em>sounds like</em>
             </h2>
           </div>
           <div className="testi-grid">
             {testimonials.map((item, index) => (
               <article key={item.name} className={`testi-card reveal reveal-delay-${Math.min(index, 2)}`}>
-                <span className="qm">“</span>
+                <span className="qm">"</span>
                 <p className="testi-text">{item.text}</p>
                 <div className="testi-name">{item.name}</div>
                 <div className="testi-role">{item.role}</div>
@@ -529,9 +518,9 @@ export default function Home() {
           <div className="team-header reveal">
             <div className="team-label">People Behind The Mission</div>
             <h2 className="section-title">
-              A team building
+              A team dedicated to
               <br />
-              <em>grassroots momentum</em>
+              <em>grassroots change</em>
             </h2>
           </div>
           <div className="board-label">Core Team & Board Members</div>
@@ -565,15 +554,15 @@ export default function Home() {
         <div className="container">
           <div className="news-header reveal">
             <div>
-              <span className="section-label">Updates</span>
+              <span className="section-label">Latest Updates</span>
               <h2 className="section-title">
-                News from the
+                Stories from the
                 <br />
-                <em>ground</em>
+                <em>field</em>
               </h2>
             </div>
             <a href="https://youthaidfoundation.org/blog/" className="btn-ghost-dark" target="_blank" rel="noreferrer">
-              All News <span className="arr">→</span>
+              All Updates <span className="arr">→</span>
             </a>
           </div>
           <div className="news-grid">
@@ -615,7 +604,7 @@ export default function Home() {
                 ))}
               </div>
               <p className="partners-note">
-                A shared ecosystem of partners and donors helping women entrepreneurs grow with dignity, access, and long-term support.
+                Together with our ecosystem of partners, we create lasting opportunities for women entrepreneurs to grow.
               </p>
             </div>
 
@@ -623,9 +612,9 @@ export default function Home() {
               <div className="partners-network-header">
                 <div>
                   <div className="partners-network-label">Partner Network</div>
-                  <div className="partners-network-title">Community of supporters, donors, and field allies</div>
+                  <div className="partners-network-title">Organizations, donors, and allies working together</div>
                 </div>
-                <div className="partners-network-meta">{partners.length}+ active relationships</div>
+                <div className="partners-network-meta">{partners.length}+ partnerships</div>
               </div>
               <div className="partners-logo-grid unified">
                 {partners.map((partner, index) => (
@@ -646,9 +635,9 @@ export default function Home() {
           <div className="join-header reveal">
             <span className="section-label alt-label centered-label">Get Involved</span>
             <h2 className="section-title white">
-              Join the <em>movement</em>
+              Be part of the <em>movement</em>
             </h2>
-            <p>There are many ways to contribute to a more equitable India. If you can provide expertise, skills, and inspiration to our supported entrepreneurs, reach out.</p>
+            <p>Your skills, expertise, or support can directly impact an entrepreneur's success. Here are ways to get involved.</p>
           </div>
           <div className="join-grid">
             {joinCards.map((card, index) => (
@@ -696,7 +685,7 @@ export default function Home() {
                 YOUTH<span>Aid</span> Foundation
               </div>
               <p>
-                We inspire transformation by creating and training entrepreneurs. YouthAid builds a thriving grassroots entrepreneurship ecosystem across urban slums, rural areas, and tribal communities.
+                We build thriving entrepreneurship ecosystems in grassroots communities. By supporting women entrepreneurs, we create pathways to dignity, independence, and economic participation.
               </p>
               <div className="social-row">
                 <a href="https://www.facebook.com/yesummitindia" className="soc-btn" target="_blank" rel="noreferrer">f</a>
