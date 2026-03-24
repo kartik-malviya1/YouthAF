@@ -38,10 +38,9 @@ export default function Navbar() {
           {/* </NavLink> */}
         </li>
         <li className='border-0'>
-          {/* <NavLink to="/media" className={({ isActive }) => (isActive ? 'active' : undefined)}>
+          <NavLink to="/blogs" className={({ isActive }) => (isActive ? 'active' : undefined)}>
             Media
-          </NavLink> */}
-          <DropDownMenu />
+          </NavLink>
         </li>
         <li>
           <NavLink to="/joinus" className={({ isActive }) => (isActive ? 'active' : undefined)}>
