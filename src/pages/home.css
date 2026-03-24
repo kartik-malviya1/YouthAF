@@ -187,6 +187,13 @@
   transition: color 0.2s;
 }
 
+.nav-links a.active {
+  color: var(--red) !important;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
 .nav-links a::after {
   content: '';
   position: absolute;

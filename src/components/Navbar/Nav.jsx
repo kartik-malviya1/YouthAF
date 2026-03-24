@@ -1,9 +1,10 @@
+import { NavLink, Link } from 'react-router-dom'
 import logo from '../../assets/logos/logo.png'
 
 export default function Navbar() {
   return (
     <nav className="yaf-nav">
-      <a className="nav-logo" href="#home">
+      <Link className="nav-logo" to="/">
         <div className="nav-logo-icon">
           <img src={logo} alt="YAF logo" />
         </div>
@@ -13,29 +14,43 @@ export default function Navbar() {
           </div>
           <div className="tagline mt-1">Igniting Grassroots Potential</div>
         </div>
-      </a>
+      </Link>
 
       <ul className="nav-links -translate-x-8">
         <li>
-          <a href="#about">About</a>
+          <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : undefined)}>
+            About
+          </NavLink>
         </li>
         <li>
-          <a href="#programs">Programs</a>
+          <NavLink to="/programs" className={({ isActive }) => (isActive ? 'active' : undefined)}>
+            Programs
+          </NavLink>
         </li>
         <li>
-          <a href="#stories">Stories</a>
+          <NavLink to="/stories" className={({ isActive }) => (isActive ? 'active' : undefined)}>
+            Stories
+          </NavLink>
         </li>
         <li>
-          <a href="#team">Team</a>
+          <NavLink to="/team" className={({ isActive }) => (isActive ? 'active' : undefined)}>
+            Team
+          </NavLink>
         </li>
         <li>
-          <a href="#news">News</a>
+          <NavLink to="/news" className={({ isActive }) => (isActive ? 'active' : undefined)}>
+            News
+          </NavLink>
         </li>
         <li>
-          <a href="#joinus">Join Us</a>
+          <NavLink to="/joinus" className={({ isActive }) => (isActive ? 'active' : undefined)}>
+            Join Us
+          </NavLink>
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <NavLink to="/contact" className={({ isActive }) => (isActive ? 'active' : undefined)}>
+            Contact
+          </NavLink>
         </li>
       </ul>
 
