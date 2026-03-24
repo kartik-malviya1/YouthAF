@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
+.login-page {
+  background:
+    radial-gradient(circle at top left, rgba(212, 150, 58, 0.18), transparent 28%),
+    radial-gradient(circle at right center, rgba(230, 57, 70, 0.14), transparent 32%),
+    linear-gradient(135deg, #f6ede6 0%, #fcf8f4 45%, #f9f3ec 100%);
+  font-family: 'Outfit', sans-serif;
+}
+
+.login-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.login-story {
+  position: relative;
+  isolation: isolate;
+}
+
+.login-story-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(42, 17, 10, 0.18) 0%, rgba(42, 17, 10, 0.74) 100%),
+    linear-gradient(135deg, rgba(163, 32, 25, 0.68) 0%, rgba(92, 37, 24, 0.42) 100%);
+}
+
+.login-stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 18px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.login-stat-card strong {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.login-stat-card span {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.login-input {
+  width: 100%;
+  border: 1px solid rgba(214, 211, 209, 0.9);
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 1.1rem;
+  padding: 0.95rem 1rem;
+  color: #1c1917;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.login-input::placeholder {
+  color: #a8a29e;
+}
+
+.login-input:focus {
+  border-color: rgba(239, 68, 68, 0.7);
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.12);
+}
+
+.login-button {
+  border-radius: 1.1rem;
+  padding: 0.95rem 1.25rem;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 1023px) {
+  .login-page {
+    background:
+      radial-gradient(circle at top, rgba(212, 150, 58, 0.16), transparent 28%),
+      linear-gradient(180deg, #f8f1ea 0%, #fcf8f4 100%);
+  }
+}

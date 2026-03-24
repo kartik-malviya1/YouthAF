@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-red: #e63946;
+  --color-brand-yellow: #ffb703;
+  --color-brand-dark: #1a1a1b;
+}
+
+@layer base {
+  body {
+    @apply antialiased selection:bg-brand-yellow selection:text-brand-dark;
+    background-color: #ffffff;
+    color: #1a1a1b;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  /* Premium Glass Effect */
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.05)];
+  }
+
+  /* Animated Gradient Background */
+  .bg-gradient-soft {
+    background: radial-gradient(circle at top right, rgba(255, 183, 3, 0.08), transparent),
+                radial-gradient(circle at bottom left, rgba(230, 57, 70, 0.05), transparent);
+  }
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* OPTIONAL: pause on hover */
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+::selection {
+  background: #ef4444;
+  color: white;
+}
+.input {
+  @apply p-3 border border-zinc-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 transition;
+}
