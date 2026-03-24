@@ -7,12 +7,10 @@ import bg from '../assets/bg/bgyouth.jpg'
 import bg3 from '../assets/bg/vertical-bg.jpg'
 
 
-import yesummitimg from '../assets/progimg/yesummit.png'
-import yessummit1 from '../assets/yessummit.png'
 
-import Navbar from '../components/Navbar/Nav'
-import { boardmembers, joinCards, marqueeItems, newsItems, nidhiTypes, partners, partnerStats, programs, quotes, stories, teammembers, testimonials, yesFeatures } from '../constant/constant'
 import Footer from '../components/Footer'
+import Navbar from '../components/Navbar/Nav'
+import { boardmembers, marqueeItems, newsItems, nidhiTypes, partners, partnerStats, stories, teammembers, testimonials } from '../constant/constant'
 
 
 
@@ -263,7 +261,7 @@ export default function Home() {
         </div>
       )}
 
-      <section className="quote-strip">
+      {/* <section className="quote-strip">
         <div className="container">
           <div className="quote-inner">
             {quotes.map((quote) => (
@@ -276,7 +274,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="yatra-section">
         <div className="yatra-bg-img">

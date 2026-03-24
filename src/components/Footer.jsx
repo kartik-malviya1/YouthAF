@@ -31,25 +31,25 @@ export default function Footer() {
             <div>
               <div className="fc-title">Programs</div>
               <ul className="fc-links">
-                <li><a href="https://youthaidfoundation.org/our-programs/#saksham" target="_blank" rel="noreferrer">Saksham</a></li>
-                <li><a href="https://youthaidfoundation.org/our-programs/#sankalp" target="_blank" rel="noreferrer">Sankalp</a></li>
-                <li><a href="https://youthaidfoundation.org/our-programs/#sphoorti" target="_blank" rel="noreferrer">Sphoorti</a></li>
-                <li><a href="https://youthaidfoundation.org/our-programs/#nidhi" target="_blank" rel="noreferrer">Nidhi</a></li>
-                <li><a href="https://youthaidfoundation.org/our-programs/#yesummit" target="_blank" rel="noreferrer">YESummit</a></li>
-                <li><a href="https://youthaidfoundation.org/causes/udyamita-yatra/" target="_blank" rel="noreferrer">Udyamita Yatra</a></li>
+                <li><a href="#">Saksham</a></li>
+                <li><a href="#">Sankalp</a></li>
+                <li><a href="#">Sphoorti</a></li>
+                <li><a href="#">Nidhi</a></li>
+                <li><a href="#">YESummit</a></li>
+                <li><a href="#">Udyamita Yatra</a></li>
               </ul>
             </div>
             <div>
               <div className="fc-title">Quick Links</div>
               <ul className="fc-links">
-                <li><a href="https://youthaidfoundation.org/about-yaf/" target="_blank" rel="noreferrer">About YAF</a></li>
-                <li><a href="https://youthaidfoundation.org/board/" target="_blank" rel="noreferrer">Our Team</a></li>
-                <li><a href="https://youthaidfoundation.org/blogs/" target="_blank" rel="noreferrer">Blogs & Vlogs</a></li>
-                <li><a href="https://youthaidfoundation.org/blog/" target="_blank" rel="noreferrer">News & Updates</a></li>
-                <li><a href="https://youthaidfoundation.org/policies/" target="_blank" rel="noreferrer">Policies</a></li>
-                <li><a href="https://youthaidfoundation.org/volunteer/" target="_blank" rel="noreferrer">Volunteer</a></li>
-                <li><a href="https://youthaidfoundation.org/csr-partnership/" target="_blank" rel="noreferrer">CSR Partnership</a></li>
-                <li><a href="https://youthaidfoundation.org/job-openings/" target="_blank" rel="noreferrer">Careers</a></li>
+                <li><a href="/about">About YAF</a></li>
+                <li><a href="#/team" target="_blank" rel="noreferrer">Our Team</a></li>
+                <li><a href="/blogs">Blogs & Vlogs</a></li>
+                <li><a href="/blog">News & Updates</a></li>
+                <li><a href="https://youthaidfoundation.org/policies/">Policies</a></li>
+                <li><a href="https://youthaidfoundation.org/volunteer/">Volunteer</a></li>
+                <li><a href="https://youthaidfoundation.org/csr-partnership/">CSR Partnership</a></li>
+                <li><a href="https://youthaidfoundation.org/job-openings/">Careers</a></li>
               </ul>
             </div>
             <div>

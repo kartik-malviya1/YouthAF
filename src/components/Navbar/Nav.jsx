@@ -30,7 +30,7 @@ export default function Navbar() {
           </NavLink>
         </li>
         <li>
-          <a href="#stories">Stories</a>
+          <a href="/#stories">Stories</a>
         </li>
         <li>
           {/* <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)}> */}
