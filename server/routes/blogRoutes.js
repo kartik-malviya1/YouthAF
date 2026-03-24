@@ -22,50 +22,50 @@ router.get("/category/:type", async (req, res) => {
   }
 });
 
-// create blog with image
-router.post("/", auth, upload.single("image"), async (req, res) => {
-  try {
-    const { title, content, category, eventDate } = req.body;
+// // create blog with image
+// router.post("/", auth, upload.single("image"), async (req, res) => {
+//   try {
+//     const { title, content, category, eventDate } = req.body;
 
-    const blog = new Blog({
-      title,
-      content,
-      category,
-      eventDate,
-      image: req.file?.path,
-    });
+//     const blog = new Blog({
+//       title,
+//       content,
+//       category,
+//       eventDate,
+//       image: req.file?.path,
+//     });
 
-    await blog.save();
+//     await blog.save();
 
-    res.json(blog);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
+//     res.json(blog);
+//   } catch (err) {
+//     res.status(500).json({ error: err.message });
+//   }
+// });
 
 
 // update blog
-router.put("/:id", auth, upload.single("image"), async (req, res) => {
-  try {
-    const updateData = {
-      ...req.body,
-    };
+// router.put("/:id", auth, upload.single("image"), async (req, res) => {
+//   try {
+//     const updateData = {
+//       ...req.body,
+//     };
 
-    if (req.file) {
-      updateData.image = req.file.path;
-    }
+//     if (req.file) {
+//       updateData.image = req.file.path;
+//     }
 
-    const updated = await Blog.findByIdAndUpdate(
-      req.params.id,
-      updateData,
-      { new: true }
-    );
+//     const updated = await Blog.findByIdAndUpdate(
+//       req.params.id,
+//       updateData,
+//       { new: true }
+//     );
 
-    res.json(updated);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
+//     res.json(updated);
+//   } catch (err) {
+//     res.status(500).json({ error: err.message });
+//   }
+// });
 
 
 // delete blog
