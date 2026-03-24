@@ -6,6 +6,7 @@ import './home.css'
 import helpsinglemom from '../assets/blog-images/helpsinglemom.jpeg'
 import jayahelp from '../assets/blog-images/jaya-help.jpeg'
 import YAF from '../assets/blog-images/YAF-made.jpeg'
+import Footer from '../components/Footer'
 
 const fallbackStories = [
   {
@@ -257,6 +258,7 @@ export default function Blog() {
           )}
         </div>
       </section>
+      <Footer />
 
       {selectedPost ? (
         <div className="story-modal-backdrop" onClick={() => setSelectedPost(null)}>

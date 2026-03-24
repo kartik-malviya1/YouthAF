@@ -14,10 +14,10 @@ import Admin from "./pages/Admin";
 import Donate from "./pages/Donate";
 import Blog from "./pages/Blogs";
 import About from "./pages/About";
+import JoinUs from "./pages/JoinUs";
+import Programs from "./pages/Programs";
 // import Media from "./pages/Media";
-// import Prorgram from "./pages/Programs";
 // import Contact from "./pages/Contact";
-// import JoinUs from "./pages/JoinUs";
 
 function AppLayout() {
   const location = useLocation();
@@ -29,10 +29,9 @@ function AppLayout() {
         <Route path="/" element={<Home />} />
         <Route path="/blogs" element={<Blog />} />
         <Route path="/about" element={<About />} />
-        {/* <Route path="/programs" element={<Program/>} />
-        <Route path="/media" element={<Media/>} />
+        <Route path="/programs" element={<Programs/>} />
+        {/* <Route path="/media" element={<Media/>} /> */}
         <Route path="/joinus" element={<JoinUs/>} />
-        <Route path="/contact" element={<Contact/>} /> */}
         <Route path="/login" element={<Login />} />
         <Route path="/admin-login" element={<Login />} />
         <Route path="/donate" element={<Donate />} />

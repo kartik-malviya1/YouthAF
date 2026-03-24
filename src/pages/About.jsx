@@ -1,14 +1,13 @@
-import { useEffect } from 'react'
 import yesummitimg from '../assets/progimg/yesummit.png'
 import aboutusimg from '../assets/aboutimg.jpg'
 import yessummit1 from '../assets/yessummit.png'
+import { useEffect } from 'react'
 import './home.css'
 import Navbar from '../components/Navbar/Nav'
+import Footer from '../components/Footer'
 
 export default function About() {
   useEffect(() => {
-    // Home page uses an IntersectionObserver to add 'visible' to .reveal elements.
-    // About also uses the same reveal classes — add 'visible' on mount so content is shown.
     const items = document.querySelectorAll('.reveal')
     items.forEach((it) => it.classList.add('visible'))
     return () => {
@@ -82,6 +81,7 @@ export default function About() {
         </div>
       </div>
     </section>
+    <Footer />
     </div>
   );
 }

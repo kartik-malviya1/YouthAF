@@ -12,6 +12,7 @@ import yessummit1 from '../assets/yessummit.png'
 
 import Navbar from '../components/Navbar/Nav'
 import { boardmembers, joinCards, marqueeItems, newsItems, nidhiTypes, partners, partnerStats, programs, quotes, stories, teammembers, testimonials, yesFeatures } from '../constant/constant'
+import Footer from '../components/Footer'
 
 
 
@@ -178,37 +179,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="programs-section" id="programs">
-        <div className="container">
-          <div className="programs-header reveal">
-            <div>
-              <span className="section-label">What We Do</span>
-              <h2 className="section-title">
-                Comprehensive support
-                <br />
-                <em>from idea to scale</em>
-              </h2>
-              <p>Our integrated approach covers every stage of entrepreneurial growth—training, capital access, market connections, and ongoing mentorship.</p>
-            </div>
-          </div>
-          <div className="programs-grid">
-            {programs.map((program) => (
-              <article key={program.name} className={`prog-card reveal${program.wide ? ' wide' : ''}`}>
-                <div className={`prog-img${program.wide ? ' tall' : ''}`}>
-                  <img src={program.img} alt={program.name} />
-                </div>
-                <div className="prog-icon-pill">{program.pill}</div>
-                <div className="prog-name">{program.name}</div>
-                <p className="prog-desc">{program.desc}</p>
-                <a href={program.href} className="prog-link" target="_blank" rel="noreferrer">
-                  Learn more →
-                </a>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="stories-section" id="stories">
         <div className="container">
           <div className="stories-header reveal">
@@ -308,60 +278,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="yes-section">
-        <div className="container">
-          <div className="yes-inner">
-            <div className="yes-imgs reveal">
-              <div className="yes-img-main">
-                <img src={yessummit1} alt="YESummit stage" />
-              </div>
-              <div className="yes-img-sm">
-                <img src={yesummitimg} alt="Entrepreneur speaking" />
-              </div>
-              <div className="yes-img-sm">
-                <img src={bg3} alt="Networking session" />
-              </div>
-            </div>
-            <div className="yes-text reveal reveal-delay-1">
-              <span className="section-label">YESummit</span>
-              <h2 className="section-title">
-                A national stage for
-                <br />
-                <em>grassroots ambition</em>
-              </h2>
-              <p>
-                YESummit is where entrepreneurs showcase products, pitch business ideas, and build the confidence to scale beyond local markets. Our flagship annual event brings together hundreds of grassroots business owners for learning, visibility, and opportunity.
-              </p>
-              <div className="yes-facts">
-                <div className="yf-item">
-                  <div className="n">350+</div>
-                  <div className="l">Participants in 2024</div>
-                </div>
-                <div className="yf-item">
-                  <div className="n">123</div>
-                  <div className="l">Pitches for seed capital</div>
-                </div>
-                <div className="yf-item">
-                  <div className="n">49</div>
-                  <div className="l">Exhibiting entrepreneurs</div>
-                </div>
-              </div>
-              <div className="yes-features">
-                {yesFeatures.map((feature) => (
-                  <div key={feature.title} className="yes-feat">
-                    <div className="yes-feat-icon">{feature.icon}</div>
-                    <div>
-                      <div className="yes-feat-title">{feature.title}</div>
-                      <div className="yes-feat-desc">{feature.desc}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="yatra-section">
         <div className="yatra-bg-img">
           <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1400&q=80&fit=crop" alt="Udyamita Yatra background" />
@@ -434,6 +350,54 @@ export default function Home() {
                     <div className="nt-title">{item.title}</div>
                     <div className="nt-desc">{item.desc}</div>
                   </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="partners-section">
+        <div className="container">
+          <div className="partners-shell reveal">
+            <div className="partners-copy">
+              <span className="section-label">Our Partners & Donors</span>
+              <h2 className="section-title">
+                Support that
+                <br />
+                <em>multiplies impact</em>
+              </h2>
+              <p className="partners-text">
+                Every partnership helps us move beyond one-time aid and build stronger ecosystems for women entrepreneurs through training, funding, mentorship, and market access.
+              </p>
+              <div className="partner-stats">
+                {partnerStats.map((item, index) => (
+                  <div key={item.label} className={`partner-stat reveal reveal-delay-${Math.min(index, 2)}`}>
+                    <div className="partner-stat-value">{item.value}</div>
+                    <div className="partner-stat-label">{item.label}</div>
+                  </div>
+                ))}
+              </div>
+              <p className="partners-note">
+                Together with our ecosystem of partners, we create lasting opportunities for women entrepreneurs to grow.
+              </p>
+            </div>
+
+            <div className="partners-content reveal reveal-delay-1">
+              <div className="partners-network-header">
+                <div>
+                  <div className="partners-network-label">Partner Network</div>
+                  <div className="partners-network-title">Organizations, donors, and allies working together</div>
+                </div>
+                <div className="partners-network-meta">{partners.length}+ partnerships</div>
+              </div>
+              <div className="partners-logo-grid unified">
+                {partners.map((partner, index) => (
+                  <article key={partner.name} className={`partner-logo-tile reveal reveal-delay-${Math.min(index % 3, 2)}`}>
+                    <div className="partner-logo-tile-image-wrap logo-container">
+                      <img src={partner.logo} alt={`${partner.name} logo`} className="partner-logo-tile-image" />
+                    </div>
+                  </article>
                 ))}
               </div>
             </div>
@@ -533,77 +497,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="partners-section">
-        <div className="container">
-          <div className="partners-shell reveal">
-            <div className="partners-copy">
-              <span className="section-label">Our Partners & Donors</span>
-              <h2 className="section-title">
-                Support that
-                <br />
-                <em>multiplies impact</em>
-              </h2>
-              <p className="partners-text">
-                Every partnership helps us move beyond one-time aid and build stronger ecosystems for women entrepreneurs through training, funding, mentorship, and market access.
-              </p>
-              <div className="partner-stats">
-                {partnerStats.map((item, index) => (
-                  <div key={item.label} className={`partner-stat reveal reveal-delay-${Math.min(index, 2)}`}>
-                    <div className="partner-stat-value">{item.value}</div>
-                    <div className="partner-stat-label">{item.label}</div>
-                  </div>
-                ))}
-              </div>
-              <p className="partners-note">
-                Together with our ecosystem of partners, we create lasting opportunities for women entrepreneurs to grow.
-              </p>
-            </div>
-
-            <div className="partners-content reveal reveal-delay-1">
-              <div className="partners-network-header">
-                <div>
-                  <div className="partners-network-label">Partner Network</div>
-                  <div className="partners-network-title">Organizations, donors, and allies working together</div>
-                </div>
-                <div className="partners-network-meta">{partners.length}+ partnerships</div>
-              </div>
-              <div className="partners-logo-grid unified">
-                {partners.map((partner, index) => (
-                  <article key={partner.name} className={`partner-logo-tile reveal reveal-delay-${Math.min(index % 3, 2)}`}>
-                    <div className="partner-logo-tile-image-wrap logo-container">
-                      <img src={partner.logo} alt={`${partner.name} logo`} className="partner-logo-tile-image" />
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="join-section" id="joinus">
-        <div className="container">
-          <div className="join-header reveal">
-            <span className="section-label alt-label centered-label">Get Involved</span>
-            <h2 className="section-title white">
-              Be part of the <em>movement</em>
-            </h2>
-            <p>Your skills, expertise, or support can directly impact an entrepreneur's success. Here are ways to get involved.</p>
-          </div>
-          <div className="join-grid">
-            {joinCards.map((card, index) => (
-              <article key={card.title} className={`join-card reveal reveal-delay-${Math.min(index, 2)}`}>
-                <span className="join-icon">{card.icon}</span>
-                <div className="join-title">{card.title}</div>
-                <p className="join-desc">{card.desc}</p>
-                <a href={card.href} className="btn-outline-w" target="_blank" rel="noreferrer">
-                  {card.label}
-                </a>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="cta-strip">
         <div className="container">
@@ -627,66 +520,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <footer id="contact">
-        <div className="container">
-          <div className="footer-grid">
-            <div className="footer-brand">
-              <div className="fl">
-                YOUTH<span>Aid</span> Foundation
-              </div>
-              <p>
-                We build thriving entrepreneurship ecosystems in grassroots communities. By supporting women entrepreneurs, we create pathways to dignity, independence, and economic participation.
-              </p>
-              <div className="social-row">
-                <a href="https://www.facebook.com/yesummitindia" className="soc-btn" target="_blank" rel="noreferrer">f</a>
-                <a href="https://www.instagram.com/youthaidf/" className="soc-btn" target="_blank" rel="noreferrer">ig</a>
-                <a href="https://www.youtube.com/@youthaidfoundation8287" className="soc-btn" target="_blank" rel="noreferrer">yt</a>
-                <a href="https://www.linkedin.com/company/youthaidfoundation/" className="soc-btn" target="_blank" rel="noreferrer">in</a>
-                <a href="https://wa.me/917744049934" className="soc-btn" target="_blank" rel="noreferrer">wa</a>
-              </div>
-            </div>
-            <div>
-              <div className="fc-title">Programs</div>
-              <ul className="fc-links">
-                <li><a href="https://youthaidfoundation.org/our-programs/#saksham" target="_blank" rel="noreferrer">Saksham</a></li>
-                <li><a href="https://youthaidfoundation.org/our-programs/#sankalp" target="_blank" rel="noreferrer">Sankalp</a></li>
-                <li><a href="https://youthaidfoundation.org/our-programs/#sphoorti" target="_blank" rel="noreferrer">Sphoorti</a></li>
-                <li><a href="https://youthaidfoundation.org/our-programs/#nidhi" target="_blank" rel="noreferrer">Nidhi</a></li>
-                <li><a href="https://youthaidfoundation.org/our-programs/#yesummit" target="_blank" rel="noreferrer">YESummit</a></li>
-                <li><a href="https://youthaidfoundation.org/causes/udyamita-yatra/" target="_blank" rel="noreferrer">Udyamita Yatra</a></li>
-              </ul>
-            </div>
-            <div>
-              <div className="fc-title">Quick Links</div>
-              <ul className="fc-links">
-                <li><a href="https://youthaidfoundation.org/about-yaf/" target="_blank" rel="noreferrer">About YAF</a></li>
-                <li><a href="https://youthaidfoundation.org/board/" target="_blank" rel="noreferrer">Our Team</a></li>
-                <li><a href="https://youthaidfoundation.org/blogs/" target="_blank" rel="noreferrer">Blogs & Vlogs</a></li>
-                <li><a href="https://youthaidfoundation.org/blog/" target="_blank" rel="noreferrer">News & Updates</a></li>
-                <li><a href="https://youthaidfoundation.org/policies/" target="_blank" rel="noreferrer">Policies</a></li>
-                <li><a href="https://youthaidfoundation.org/volunteer/" target="_blank" rel="noreferrer">Volunteer</a></li>
-                <li><a href="https://youthaidfoundation.org/csr-partnership/" target="_blank" rel="noreferrer">CSR Partnership</a></li>
-                <li><a href="https://youthaidfoundation.org/job-openings/" target="_blank" rel="noreferrer">Careers</a></li>
-              </ul>
-            </div>
-            <div>
-              <div className="fc-title">Contact Us</div>
-              <div className="fc-addr">Flat no. 102, Crown Plaza, Deccan College Rd, next to Manuski, Crown Co-Op Housing Society, Jai Jawan Nagar, Salwe Nagar, Yerawada, Pune.</div>
-              <div className="fc-contact">📞 +91 77440 49934</div>
-              <div className="fc-contact">✉️ Youthaidf@gmail.com</div>
-              <div className="fc-contact">🌐 youthaidfoundation.org</div>
-              <a href="/donate" className="btn-red footer-btn" target="_blank" rel="noreferrer">
-                Donate Now
-              </a>
-            </div>
-          </div>
-          <div className="footer-bottom">
-            <div>© 2026 YouthAid Foundation. All Rights Reserved.</div>
-            <div>Igniting Grassroots Potential · Pune, Maharashtra, India</div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

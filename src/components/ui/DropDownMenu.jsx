@@ -16,7 +16,7 @@ export default function DropDownMenu() {
         <div className="py-1">
           <MenuItem>
             <a
-              href="/news"
+              href="/blogs"
               className="block px-4 py-2 text-sm text-gray-300 data-focus:text-white data-focus:outline-hidden"
             >
               News
