@@ -1,6 +1,5 @@
-import { NavLink, Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import logo from '../../assets/logos/logo.png'
-import DropDownMenu from '../ui/DropDownMenu'
 
 export default function Navbar() {
   
