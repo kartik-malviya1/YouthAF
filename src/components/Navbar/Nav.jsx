@@ -30,13 +30,11 @@ export default function Navbar() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/stories" className={({ isActive }) => (isActive ? 'active' : undefined)}>
-            Stories
-          </NavLink>
+          <a href="#stories">Stories</a>
         </li>
         <li>
           {/* <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)}> */}
-            <a href="#team">Team</a>
+            <a href="/#team ">Team</a>
           {/* </NavLink> */}
         </li>
         <li className='border-0'>

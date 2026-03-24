@@ -512,7 +512,7 @@ export default function Home() {
                 <em>field</em>
               </h2>
             </div>
-            <a href="https://youthaidfoundation.org/blog/" className="btn-ghost-dark" target="_blank" rel="noreferrer">
+            <a href="/blogs" className="btn-ghost-dark" target="_blank" rel="noreferrer">
               All Updates <span className="arr">→</span>
             </a>
           </div>
