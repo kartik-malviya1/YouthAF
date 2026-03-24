@@ -1,7 +1,9 @@
 import { NavLink, Link } from 'react-router-dom'
 import logo from '../../assets/logos/logo.png'
+import DropDownMenu from '../ui/DropDownMenu'
 
 export default function Navbar() {
+  
   return (
     <nav className="yaf-nav">
       <Link className="nav-logo" to="/">
@@ -33,14 +35,15 @@ export default function Navbar() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/team" className={({ isActive }) => (isActive ? 'active' : undefined)}>
-            Team
-          </NavLink>
+          {/* <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)}> */}
+            <a href="#team">Team</a>
+          {/* </NavLink> */}
         </li>
-        <li>
-          <NavLink to="/news" className={({ isActive }) => (isActive ? 'active' : undefined)}>
-            News
-          </NavLink>
+        <li className='border-0'>
+          {/* <NavLink to="/media" className={({ isActive }) => (isActive ? 'active' : undefined)}>
+            Media
+          </NavLink> */}
+          <DropDownMenu />
         </li>
         <li>
           <NavLink to="/joinus" className={({ isActive }) => (isActive ? 'active' : undefined)}>
