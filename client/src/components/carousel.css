@@ -1,0 +1,49 @@
+.carousel-wrapper {
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px;
+}
+
+/* Hide scrollbar */
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-track {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Card width */
+.carousel-track .story-card {
+  min-width: 300px;
+  flex: 0 0 300px;
+}
+
+/* Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.carousel-btn.left {
+  left: -10px;
+}
+
+.carousel-btn.right {
+  right: -10px;
+}
