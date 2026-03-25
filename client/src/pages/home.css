@@ -731,6 +731,7 @@
   background: radial-gradient(circle, rgba(230, 51, 41, 0.12), transparent 70%);
 }
 
+
 .impact-grid {
   grid-template-columns: 1fr 1.6fr;
   position: relative;
@@ -747,7 +748,12 @@
   grid-template-columns: 1fr 1fr;
   gap: 3px;
 }
-
+@media (max-width: 768px) {
+  .impact-numbers {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
 .impact-card {
   cursor: default;
   border: 1px solid rgba(255, 255, 255, 0.07);

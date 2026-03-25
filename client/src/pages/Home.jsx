@@ -180,7 +180,7 @@ export default function Home() {
               </h2>
               <p>Every statistic represents a woman who decided her life wasn't fixed—who chose to build something of her own.</p>
             </div>
-            <div className="impact-numbers reveal reveal-delay-1">
+            <div className="impact-numbers reveal reveal-delay-1 ">
               <ImpactCard icon="👩‍💼" num="16,000+" label="Women trained across urban slums, rural, and tribal communities" />
               <ImpactCard icon="🗺️" num="36" label="Districts reached during the Udyamita Yatra" />
               <ImpactCard icon="💰" num="₹1.1Cr" label="Seed capital disbursed to over 1,000 entrepreneurs" />
