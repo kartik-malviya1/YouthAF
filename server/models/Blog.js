@@ -16,8 +16,8 @@ const blogSchema = new mongoose.Schema(
       enum: ["story", "news"],
       required: true,
     },
-    image: {
-      url: String,
+    blogImage: {
+      type: String,
       public_id: String,
     },
     eventDate: {
