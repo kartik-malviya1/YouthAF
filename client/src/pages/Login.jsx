@@ -34,11 +34,11 @@ export default function Login() {
   };
 
   // 🔥 AUTO REDIRECT IF ALREADY LOGGED IN
-  useEffect(() => {
-    if (isAdmin) {
-      navigate("/admin");
-    }
-  }, [isAdmin, navigate]);
+  // useEffect(() => {
+  //   if (isAdmin) {
+  //     navigate("/admin");
+  //   }
+  // }, [isAdmin, navigate]);
 
   const handleLogin = async () => {
     setError("");

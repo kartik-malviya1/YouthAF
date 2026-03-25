@@ -254,6 +254,62 @@ export default function Blog() {
                   </article>
                 ))}
               </div>
+
+              <div id="all-blogs" className="stories-header reveal visible" style={{ marginTop: '52px' }}>
+                <div>
+                  <span className="section-label">All Blogs</span>
+                  <h2 className="section-title">
+                    Get Latest <em>Updates</em>
+                  </h2>
+                </div>
+                <div style={{ color: 'var(--grey-light)', fontWeight: 600 }}>
+                  {posts.length} {posts.length === 1 ? 'story' : 'stories'}
+                </div>
+              </div>
+
+              <div className="stories-grid blog-stories-grid">
+                {allPosts.map((post, index) => (
+                  <article
+                  key={post.id}
+                  className={`story-card blog-story-card reveal visible reveal-delay-${Math.min(index, 2)}`}
+                  onClick={() => setSelectedPost(post)}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      event.preventDefault()
+                      setSelectedPost(post)
+                    }
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Read full blog: ${post.title}`}
+                  >
+                    <div className="story-img short" style={{ height: '260px' }}>
+                      <img src={post.image} alt={post.title} />
+                      <div className="story-img-overlay">
+                        <span className="story-cat">{post.category}</span>
+                      </div>
+                    </div>
+                    <div className="story-body">
+                      <div style={{ color: 'var(--grey-light)', fontSize: '0.84rem', marginBottom: '10px', fontWeight: 600 }}>
+                        {formatDate(post.date)}
+                      </div>
+                      <div className="story-title">{post.title}</div>
+                      <p className="story-excerpt">{post.excerpt}</p>
+                      <button
+                        type="button"
+                        className="story-read"
+                        onClick={(event) => {
+                          event.stopPropagation()
+                          setSelectedPost(post)
+                        }}
+                        style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+                        >
+                        Read story →
+                      </button>
+                    </div>
+                  </article>
+                ))}
+              </div>
             </>
           )}
         </div>

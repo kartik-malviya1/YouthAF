@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'http://localhost:5000/api/';
 
 const AuthContext = createContext();
 
@@ -30,7 +30,7 @@ export function AuthProvider({ children }) {
   // LOGIN
   const login = async (email, password) => {
     try {
-      const response = await fetch(`${API_BASE}/auth/login`, {
+      const response = await fetch(`${API_BASE}/auth/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -57,36 +57,6 @@ export function AuthProvider({ children }) {
     }
   };
 
-  // 🔐 REGISTER
-  const register = async (email, password, isAdmin = false) => {
-    try {
-      const response = await fetch(`${API_BASE}/auth/register`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email, password, isAdmin })
-      });
-
-      if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.error || 'Registration failed');
-      }
-
-      const data = await response.json();
-      
-      // Store token and user data
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("user", JSON.stringify(data.user));
-      
-      setUser(data.user);
-      return data;
-    } catch (error) {
-      console.error('Registration error:', error);
-      throw error;
-    }
-  };
-
   // 🔓 LOGOUT
   const logout = () => {
     setUser(null);
@@ -98,7 +68,7 @@ export function AuthProvider({ children }) {
   const isAdmin = user?.isAdmin || false;
 
   return (
-    <AuthContext.Provider value={{ user, login, register, logout, isAdmin, loading }}>
+    <AuthContext.Provider value={{ user, login, logout, isAdmin, loading }}>
       {!loading && children}
     </AuthContext.Provider>
   );
