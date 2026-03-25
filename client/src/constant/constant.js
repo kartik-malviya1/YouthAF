@@ -10,21 +10,16 @@ import pranali from '../assets/team-members/Pranali-Pawar.png'
 import rasika from '../assets/team-members/Rasika-Kadam.png'
 import shilpa from '../assets/team-members/Shilpa-Bahade.png'
 
-import bg from '../assets/bg/bgyouth.jpg'
-import bg2 from '../assets/bg/bg-2.jpg'
-import bg3 from '../assets/bg/vertical-bg.jpg'
 
+import nidhiimg from '../assets/progimg/nidhi.png'
 import sakshamimg from '../assets/progimg/saksham.png'
 import sankalpimg from '../assets/progimg/sankalp.png'
 import sphoortiimg from '../assets/progimg/sphoorti.png'
-import nidhiimg from '../assets/progimg/nidhi.png'
 import yesummitimg from '../assets/progimg/yesummit.png'
 
 import helpsinglemom from '../assets/blog-images/helpsinglemom.jpeg'
 import jayahelp from '../assets/blog-images/jaya-help.jpeg'
 import YAF from '../assets/blog-images/YAF-made.jpeg'
-import aboutusimg from '../assets/aboutimg.jpg'
-import yessummit1 from '../assets/yessummit.png'
 import adamasLogo from '../assets/partners-logos/adamas.png'
 import bhartiyaLogo from '../assets/partners-logos/bhartiya.png'
 import centumLogo from '../assets/partners-logos/centum.png'
@@ -35,8 +30,8 @@ import mssdsLogo from '../assets/partners-logos/mssds.png'
 import qualysLogo from '../assets/partners-logos/qualys.png'
 import samhitaLogo from '../assets/partners-logos/samhita.png'
 
-import rashikaimg from '../assets/rashika-kadam.png'
 import rampwalk from '../assets/ramp-walk.png'
+import rashikaimg from '../assets/rashika-kadam.png'
 export const marqueeItems = [
   '16,000+ Women Empowered',
   '36 Districts · Maharashtra',
@@ -303,5 +298,57 @@ export const partners = [
     type: 'Community Partner',
     desc: 'Helping extend outreach, visibility, and trust across the wider support network.',
     logo: adamasLogo,
+  },
+]
+
+
+export const fallbackStories = [
+  {
+    id: 'fallback-single-mothers',
+    title: 'Helping Single Mothers & COVID-Impacted Widows',
+    excerpt:
+      'Women who once felt trapped by circumstance found the confidence to step into entrepreneurship and rebuild their families with dignity.',
+    category: 'Community Story',
+    image: helpsinglemom,
+    href: 'https://youthaidfoundation.org/causes/helping-single-mothers-and-covid-impacted-widows/',
+    date: '2024-05-10',
+    content: [
+      'Across many communities, single mothers and women widowed during the COVID period were carrying the full burden of survival without reliable income, social backing, or a clear path forward.',
+      'YouthAid Foundation stepped in with entrepreneurship training, mentorship, and practical business support so these women could move from crisis response to long-term stability. Instead of being treated only as beneficiaries, they were encouraged to see themselves as business owners capable of making decisions and generating income.',
+      'For many participants, the first transformation was internal. Confidence, self-belief, and financial awareness began to grow alongside business planning. Small enterprises then became a way to rebuild dignity at home, support children, and create a stronger sense of independence.',
+      'What makes this story powerful is not just the launch of micro-businesses, but the shift in identity. Women who once felt cornered by circumstance began creating livelihoods with agency, resilience, and hope.',
+    ],
+  },
+  {
+    id: 'fallback-jaya-crc',
+    title: "Jaya Helped 10,000 Villagers Through 'CRC'",
+    excerpt:
+      'A local entrepreneur transformed personal hardship into a service that reached thousands of people in her community.',
+    category: 'Community Story',
+    image: jayahelp,
+    href: 'https://youthaidfoundation.org/causes/jaya-solved-the-problem-of-hundreds-of-villagers-through-her-new-yaf-supported-business/',
+    date: '2024-07-21',
+    content: [
+      "Jaya's journey began with hardship, but it did not end there. With YouthAid Foundation's support, she identified a community need and built a service model around it through a Common Resource Center approach.",
+      'Her work solved real everyday problems for villagers who previously had limited access to essential support and services. As her confidence and systems improved, the business became more than a source of income; it became local infrastructure.',
+      'The reach of her effort eventually extended to thousands of villagers, proving that grassroots entrepreneurship can scale when it is rooted in community realities. Her story is a reminder that local women leaders often understand the most urgent problems best.',
+      "Jaya's impact reflects the larger vision of the program: when women are backed with skills, mentorship, and capital, they do not only improve their own households, they strengthen the communities around them.",
+    ],
+  },
+  {
+    id: 'fallback-digital-way-ahead',
+    title: 'YAF made me realize digital is the way ahead',
+    excerpt:
+      'A founder moved from hyperlocal selling to digital confidence after being exposed to new tools, customers, and ambition at YESummit.',
+    category: 'Founder Voice',
+    image: YAF,
+    href: 'https://youthaidfoundation.org/causes/',
+    date: '2024-08-15',
+    content: [
+      'This additional income earned by implementing YAF teachings gave Deepali Chawan the freedom to live for herself and imagine a future beyond survival.',
+      'Digital literacy became the unlock. Before joining YAF, business knowledge felt limited to buying and selling locally with no records, no promotion, and no wider reach. The training introduced practical marketing ideas, basic business systems, and the confidence to engage customers differently.',
+      'That shift was not only technical. It also helped remove the inferiority many grassroots entrepreneurs feel when entering unfamiliar economic spaces. Exposure to YESummit created a sense that business growth, visibility, and professionalism were possible.',
+      'Her reflection captures the role YAF plays across many journeys: making entrepreneurship feel accessible, teachable, and worth pursuing with pride.',
+    ],
   },
 ]

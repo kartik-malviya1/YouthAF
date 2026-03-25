@@ -4,60 +4,80 @@ import { getMedia } from '../utils/storage'
 import './home.css'
 
 import helpsinglemom from '../assets/blog-images/helpsinglemom.jpeg'
-import jayahelp from '../assets/blog-images/jaya-help.jpeg'
-import YAF from '../assets/blog-images/YAF-made.jpeg'
 import Footer from '../components/Footer'
+import { fallbackStories } from '../constant/constant'
 
-const fallbackStories = [
-  {
-    id: 'fallback-single-mothers',
-    title: 'Helping Single Mothers & COVID-Impacted Widows',
-    excerpt:
-      'Women who once felt trapped by circumstance found the confidence to step into entrepreneurship and rebuild their families with dignity.',
-    category: 'Community Story',
-    image: helpsinglemom,
-    href: 'https://youthaidfoundation.org/causes/helping-single-mothers-and-covid-impacted-widows/',
-    date: '2024-05-10',
-    content: [
-      'Across many communities, single mothers and women widowed during the COVID period were carrying the full burden of survival without reliable income, social backing, or a clear path forward.',
-      'YouthAid Foundation stepped in with entrepreneurship training, mentorship, and practical business support so these women could move from crisis response to long-term stability. Instead of being treated only as beneficiaries, they were encouraged to see themselves as business owners capable of making decisions and generating income.',
-      'For many participants, the first transformation was internal. Confidence, self-belief, and financial awareness began to grow alongside business planning. Small enterprises then became a way to rebuild dignity at home, support children, and create a stronger sense of independence.',
-      'What makes this story powerful is not just the launch of micro-businesses, but the shift in identity. Women who once felt cornered by circumstance began creating livelihoods with agency, resilience, and hope.',
-    ],
-  },
-  {
-    id: 'fallback-jaya-crc',
-    title: "Jaya Helped 10,000 Villagers Through 'CRC'",
-    excerpt:
-      'A local entrepreneur transformed personal hardship into a service that reached thousands of people in her community.',
-    category: 'Community Story',
-    image: jayahelp,
-    href: 'https://youthaidfoundation.org/causes/jaya-solved-the-problem-of-hundreds-of-villagers-through-her-new-yaf-supported-business/',
-    date: '2024-07-21',
-    content: [
-      "Jaya's journey began with hardship, but it did not end there. With YouthAid Foundation's support, she identified a community need and built a service model around it through a Common Resource Center approach.",
-      'Her work solved real everyday problems for villagers who previously had limited access to essential support and services. As her confidence and systems improved, the business became more than a source of income; it became local infrastructure.',
-      'The reach of her effort eventually extended to thousands of villagers, proving that grassroots entrepreneurship can scale when it is rooted in community realities. Her story is a reminder that local women leaders often understand the most urgent problems best.',
-      "Jaya's impact reflects the larger vision of the program: when women are backed with skills, mentorship, and capital, they do not only improve their own households, they strengthen the communities around them.",
-    ],
-  },
-  {
-    id: 'fallback-digital-way-ahead',
-    title: 'YAF made me realize digital is the way ahead',
-    excerpt:
-      'A founder moved from hyperlocal selling to digital confidence after being exposed to new tools, customers, and ambition at YESummit.',
-    category: 'Founder Voice',
-    image: YAF,
-    href: 'https://youthaidfoundation.org/causes/',
-    date: '2024-08-15',
-    content: [
-      'This additional income earned by implementing YAF teachings gave Deepali Chawan the freedom to live for herself and imagine a future beyond survival.',
-      'Digital literacy became the unlock. Before joining YAF, business knowledge felt limited to buying and selling locally with no records, no promotion, and no wider reach. The training introduced practical marketing ideas, basic business systems, and the confidence to engage customers differently.',
-      'That shift was not only technical. It also helped remove the inferiority many grassroots entrepreneurs feel when entering unfamiliar economic spaces. Exposure to YESummit created a sense that business growth, visibility, and professionalism were possible.',
-      'Her reflection captures the role YAF plays across many journeys: making entrepreneurship feel accessible, teachable, and worth pursuing with pride.',
-    ],
-  },
-]
+// Reusable Card Component
+const StoryCard = ({ category, date, title, excerpt, linkText, imageUrl }) => {
+  return (
+    <article className="flex flex-col w-[340px] min-w-[340px] bg-[#fbf9f6] rounded-2xl overflow-hidden border border-[#f0ebe1] shrink-0 snap-start">
+      {/* Image & Badge */}
+      <div className="relative h-[220px] w-full">
+        <img 
+          src={imageUrl} 
+          alt={title} 
+          className="w-full h-full object-cover"
+        />
+        <span className="absolute bottom-4 left-4 bg-[#e63946] text-white text-[0.7rem] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full">
+          {category}
+        </span>
+      </div>
+      
+      {/* Content */}
+      <div className="p-6 flex flex-col flex-grow">
+        <time className="text-xs text-gray-500 font-medium mb-3 block">
+          {date}
+        </time>
+        <h3 className="font-['Playfair_Display',_serif] text-xl text-gray-900 leading-snug mb-3 font-bold">
+          {title}
+        </h3>
+        <p className="text-sm text-gray-600 leading-relaxed mb-6 flex-grow">
+          {excerpt}
+        </p>
+        <a 
+          href="#" 
+          className="text-[#e63946] text-sm font-bold inline-flex items-center hover:underline group"
+        >
+          {linkText} <span className="ml-1 group-hover:translate-x-1 transition-transform">&rarr;</span>
+        </a>
+      </div>
+    </article>
+  );
+};
+
+// Main Carousel Component
+export function StoryCarousel() {
+  return (
+    <section className="min-h-screen bg-white py-16 px-6 md:px-12 font-['Inter',_sans-serif]">
+      <div className="max-w-6xl mx-auto">
+        
+        {/* Header Section */}
+        <div className="mb-10 flex flex-col md:flex-row md:justify-between md:items-end gap-4">
+          <div>
+            <p className="text-[#e63946] text-sm font-bold tracking-widest uppercase mb-3">
+              All Blogs
+            </p>
+            <h2 className="text-4xl md:text-5xl font-['Playfair_Display',_serif] font-bold text-gray-900">
+              Explore all <span className="text-[#e63946] italic font-['Playfair_Display',_serif]">stories</span>
+            </h2>
+          </div>
+          <p className="text-gray-500 font-medium text-sm">
+            {stories.length} stories
+          </p>
+        </div>
+
+        {/* Carousel Container */}
+        {/* Adds horizontal scrolling on smaller screens, hiding the scrollbar for a cleaner look */}
+        <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide">
+          {stories.map((story) => (
+            <StoryCard key={story.id} {...story} />
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
 
 const formatDate = (value) => {
   const parsed = value ? new Date(value) : null
@@ -137,7 +157,7 @@ export default function Blog() {
         setError(sorted.length === 0 ? 'No blog stories are available yet.' : '')
       } catch (err) {
         console.error('Error loading blogs:', err)
-        setPosts(fallbackStories.map(normalizePost))
+        setPosts(fallbackStories.map(normalizePost)) // fall back stories 
         setError('Live blog data could not be loaded, so showing the featured foundation stories instead.')
       } finally {
         setLoading(false)
@@ -255,9 +275,10 @@ export default function Blog() {
                 ))}
               </div>
 
+
               <div id="all-blogs" className="stories-header reveal visible" style={{ marginTop: '52px' }}>
                 <div>
-                  <span className="section-label">All Blogs</span>
+                  <span className="section-label">All News</span>
                   <h2 className="section-title">
                     Get Latest <em>Updates</em>
                   </h2>
