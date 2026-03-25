@@ -1,6 +1,6 @@
 import express from "express";
 import Blog from "../models/Blog.js";
-import auth from "../middleware/auth.js";
+// import auth from "../middleware/auth.js";
 
 const router = express.Router();
 
@@ -69,13 +69,13 @@ router.get("/category/:type", async (req, res) => {
 
 
 // delete blog
-router.delete("/:id", auth, async (req, res) => {
-  try {
-    await Blog.findByIdAndDelete(req.params.id);
-    res.json({ msg: "Blog deleted" });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
+// router.delete("/:id", auth, async (req, res) => {
+//   try {
+//     await Blog.findByIdAndDelete(req.params.id);
+//     res.json({ msg: "Blog deleted" });
+//   } catch (err) {
+//     res.status(500).json({ error: err.message });
+//   }
+// });
 
 export default router;
